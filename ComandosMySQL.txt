@@ -1,0 +1,60 @@
+\sql
+
+\connect root@localhost
+
+Contraseña
+
+CREATE database practica; o CREATE DATABASE practica; // Crea una base de datos 
+
+SHOW DATABASES; // Muestra las bases de datos
+
+USE practica; // Utilizamos la base de datos
+
+CREATE TABLE tablita(id INT AUTO_INCREMENT PRIMARY KEY, Nombre VARCHAR(100), Edad INT); // Se crea una table con tres columnas
+
+DESCRIBE tablita; // Muestra las propiedades de la tabla
+
+SHOW FULL TABLES; // Muestra todas las tablas de la base de datos
+
+ALTER TABLE tablita ADD COLUMN Correo VARCHAR(250); // Agregar una columna a la tabla
+
+ALTER TABLE tablita DROP COLUMN Edad; // Borra una columna
+
+ALTER TABLE tablita CHANGE COLUMN Nombre Apellido VARCHAR(50); // Para modificar una columna / cambiar nombre
+
+INSERT INTO tablita (Apellido, Correo) VALUES('Chaparro','@gmail'), ('Pérez','@hotmail'); // Insertar los registros
+
+SELECT * FROM tablita; // Mostrar todos los campos de todos los registros de la tabla
+
+SELECT id FROM tablita ORDER BY id DESC LIMIT 2; // Ver cuáles eran los dos últimos registros de la tabla
+
+DELETE FROM tablita WHERE id IN (4,3); // Borrar los registros indicados de la tabla
+
+UPDATE tablita SET Edad = 21 WHERE id = 1; // Actualizar un campo de la tabla
+
+DROP TABLE Precios; // Borrar tabla
+
+SELECT Apellido FROM tablita; // Mostrar columna especificada de la tabla
+
+TRUNCATE TABLE tablita; // Eliminar todos los registros de la tabla
+
+SELECT * FROM tablita WHERE Correo LIKE 'n%'; // Muestra los registros que inician por la letra especificada
+
+SELECT * FROM tablita WHERE Correo LIKE '%n'; // Muestra los registros que terminen por la letra especificada
+
+SELECT * FROM tablita WHERE Correo LIKE '%n%'; // Muestra los registros que contengan una letra especificada
+
+SELECT * FROM tablita WHERE Apellido <> 'Chaparro'; // Muestra los registros que NO contengan la palabra especificada
+
+
+
+
+
+
+
+
+
+
+
+
+
